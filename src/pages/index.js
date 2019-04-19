@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Landing from '../components/landingpage'
-import '../../assets/sass/styles.scss'
+import '../assets/sass/styles.scss'
 
 const IndexPage = ({data}) => (
  <div>
