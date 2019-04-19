@@ -6,6 +6,7 @@
   "author": "Navtej Dhillon <navtejxs@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "gatsby": "^2.3.16",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-manifest": "^2.0.28",
@@ -20,7 +21,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.6.1"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
