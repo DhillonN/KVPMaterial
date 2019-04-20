@@ -5,5 +5,19 @@
     text-align: center;
 }
 .main-body{
-    z-index: 300;
+    height: 100vh;
+}
+.gatsby-image-wrapper{
+height:100%;
+border-radius: 6px;
+width: 90%;
+}
+.project-description{
+    height: 5vw;
+    margin-top:-10px;
+    h3,h5{
+        line-height: 1rem;
+        margin: 0;
+
+    }
 }

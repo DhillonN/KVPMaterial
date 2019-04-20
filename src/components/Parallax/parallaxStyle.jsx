@@ -7,10 +7,10 @@ const parallaxStyle = {
     backgroundPosition: "center center",
     backgroundSize: "cover",
     margin: "0",
-    padding: "0",
+    padding: "10px",
     border: "0",
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-end",
     flexFlow:"column",
     justifyContent:"center"
   },
