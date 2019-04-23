@@ -16,11 +16,7 @@ const IndexPage = ({ data }) => (
         testimonials={data.allNodeTestimonials}
         about={data.nodeAboutPage}
       >
-        <div>
-          <h1>{data.nodeFrontPage.title}</h1>
-          <p>Welcome to your new Gatsby site.</p>
-          <p>Now go build something great.</p>
-        </div>
+       
       </Landing>
     </Layout>
   </div>

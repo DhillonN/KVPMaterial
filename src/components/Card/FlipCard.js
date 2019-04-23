@@ -18,7 +18,6 @@ class FlipCardpage extends React.Component {
 
   render() {
     const { about } = this.props
-    console.log(this.props)
     return (
       <GridContainer>
         <GridItem style={{ minHeight: "26rem", width: "25vw" }}>
