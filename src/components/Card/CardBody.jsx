@@ -11,9 +11,11 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import cardBodyStyle from "./cardBodyStyle.jsx";
 
 function CardBody({ ...props }) {
-  const { classes, className, children, ...rest } = props;
+  const { classes, className, children,projects,testimonials, ...rest } = props;
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,
+    [classes.cardProjects]:projects,
+    [classes.cardTestimonials]:testimonials,
     [className]: className !== undefined
   });
   return (

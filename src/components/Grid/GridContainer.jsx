@@ -11,7 +11,7 @@ const style = {
     marginRight: "-8px",
     marginLeft: "-8px",
     width: "100%",
-    justifyContent:"space-evenly"
+    justifyContent:"center"
   }
  
 };

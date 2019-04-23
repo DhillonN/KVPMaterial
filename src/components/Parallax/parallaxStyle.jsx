@@ -31,6 +31,10 @@ const parallaxStyle = {
   },
   small: {
     height: "380px"
+  },
+  spacer:{
+height:"1px",
+padding:"1px"
   }
 };
 

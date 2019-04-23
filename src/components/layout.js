@@ -10,7 +10,7 @@ const Layout = ({ children }) => (
     brand="Karaena Vincent Photography"
     rightLinks={<Links/>}
     fixed
-    color="transparent"
+    color="white"
     changeColorOnScroll={{
         height: 400,
         color: "white"

@@ -11,12 +11,14 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import cardStyle from "./cardStyle.jsx";
 
 function Card({ ...props }) {
-  const { classes, className, children, plain, carousel,square, ...rest } = props;
+  const { classes, className, children, plain, carousel,square,testimonials,gallery, ...rest } = props;
   const cardClasses = classNames({
     [classes.card]: true,
     [classes.cardPlain]: plain,
     [classes.cardCarousel]: carousel,
     [classes.cardSquare]:square,
+    [classes.cardTestimonials]:testimonials,
+    [classes.cardGallery]:gallery,
     [className]: className !== undefined
   });
   return (

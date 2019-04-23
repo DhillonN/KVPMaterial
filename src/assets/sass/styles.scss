@@ -7,17 +7,24 @@
 .main-body{
     height: 100vh;
 }
-.gatsby-image-wrapper{
-height:100%;
-border-radius: 6px;
-width: 90%;
+
+.testimonials-image{
+    width:100%;
 }
 .project-description{
-    height: 5vw;
+ /*   height: 5vw;
     margin-top:-10px;
     h3,h5{
         line-height: 1rem;
         margin: 0;
 
-    }
+    }*/
 }
+a:link{color:inherit}
+a:active{color:inherit}
+a:visited{color:inherit}
+a:hover{color:inherit}
+.ReactModalPortal{
+    position: absolute;
+    z-index: 9999;
+  }

@@ -14,7 +14,8 @@ const cardStyle = {
     minWidth: "0",
     wordWrap: "break-word",
     fontSize: ".875rem",
-    transition: "all 300ms linear"
+    transition: "all 300ms linear",
+    
   },
   cardPlain: {
     background: "transparent",
@@ -24,9 +25,25 @@ const cardStyle = {
     overflow: "hidden"
   },
   cardSquare:{
-    height: "25vw",
-    width: "25vw",
-    boxShadow:"none"
+    boxShadow:"none",
+    width:"100vw",
+    height:"100vw",
+    alignText:"center",
+    "@media (min-width: 576px)": {
+      width: "45vw",
+      height: "45vw",
+    },
+    "@media (min-width: 992px)": {
+      width: "30vw",
+      height: "30vw",
+    },
+    },
+    cardTestimonials:{
+      flexDirection:"row",
+      boxShadow:"none"
+  },
+  cardGallery:{
+width:"100%"
   }
 };
 
