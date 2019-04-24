@@ -8,6 +8,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-sass',
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    },
+    {
     resolve:'gatsby-source-drupal',
     options: {
       baseUrl:'http://192.168.1.83',

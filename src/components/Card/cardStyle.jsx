@@ -26,12 +26,12 @@ const cardStyle = {
   },
   cardSquare:{
     boxShadow:"none",
-    width:"100vw",
-    height:"100vw",
+    width:"70vw",
+    height:"70vw",
     alignText:"center",
     "@media (min-width: 576px)": {
-      width: "45vw",
-      height: "45vw",
+      width: "40vw",
+      height: "40vw",
     },
     "@media (min-width: 992px)": {
       width: "30vw",

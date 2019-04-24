@@ -9,7 +9,8 @@ import {
   roseColor,
   transition,
   boxShadow,
-  drawerWidth
+  drawerWidth,
+  karaenaGold,
 } from "../../assets/jss/material-kit-react.jsx";
 
 const headerStyle = {
@@ -31,6 +32,14 @@ const headerStyle = {
     position: "relative",
     zIndex: "unset"
   },
+  logo:{
+    marginRight:"0",
+    marginLeft:"10px",
+    "@media (min-width: 576px)": {
+      marginRight:"0",
+    }
+
+  },
   absolute: {
     position: "absolute",
     zIndex: "1100"
@@ -39,6 +48,7 @@ const headerStyle = {
     position: "fixed",
     zIndex: "1100"
   },
+ 
   container: {
     ...container,
     minHeight: "50px",
@@ -46,7 +56,8 @@ const headerStyle = {
     alignItems: "center",
     justifyContent: "space-between",
     display: "flex",
-    flexWrap: "nowrap"
+    flexWrap: "nowrap",
+    maxWidth:"99%"
   },
   flex: {
     flex: 1
@@ -54,14 +65,19 @@ const headerStyle = {
   title: {
     ...defaultFont,
     lineHeight: "30px",
-    fontSize: "18px",
+    fontSize: "1rem",
     borderRadius: "3px",
     textTransform: "none",
     color: "inherit",
-    padding: "8px 16px",
+    padding: "0",
+    color:karaenaGold,
+    "@media (min-width: 576px)": {
+      fontSize:"2rem",
+      padding: "8px 16px",
+    },
     "&:hover,&:focus": {
       color: "inherit",
-      background: "transparent"
+      background: "transparent",      
     }
   },
   appResponsive: {
@@ -121,9 +137,16 @@ const headerStyle = {
     marginBottom: "20px",
     color: "#555",
     backgroundColor: "#fff !important",
+    maxWidth:"100vw",
+    left:"0",
     boxShadow:
       "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)"
   },
+ 
+  logoText:{
+    width:"100%",
+    marginLeft:"0"
+      },
   drawerPaper: {
     border: "none",
     bottom: "0",

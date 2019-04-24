@@ -6,6 +6,7 @@ import Card from "../../../Card/Card"
 import CardBody from "../../../Card/CardBody"
 import Grid from "../../../Grid/GridContainer"
 import GridItems from "../../../Grid/GridItem"
+import Image from 'gatsby-image'
 
 class Testimonials extends React.Component {
   render() {
@@ -13,19 +14,20 @@ class Testimonials extends React.Component {
       const {classes}=this.props
       const imageClasses = classNames(
         classes.imgRaised,
-  
-        classes.imgFluid
+        classes.imgFluid,
+        classes.imgFit
       )
     return (
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <>
         <h2 className={classes.title}>What Our Clients Say</h2>
         <Grid>
           {testimonials.edges.map(({ node }, i) => (
             <GridItems key={i} xs={12} sm={12} md={4}>
+            <div className={classNames(classes.main, classes.mainRaised)}>
               <Card plain key={i}>
                 <GridItems xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img
-                    src={node.relationships.field_image.localFile.url}
+                  <Image
+                    fluid={node.relationships.field_image.localFile.childImageSharp.fluid}
                     alt={node.title}
                     className={imageClasses}
                   />
@@ -44,12 +46,12 @@ class Testimonials extends React.Component {
                       __html: node.body.processed,
                     }}
                   />
-                </CardBody>
-              </Card>
+                </CardBody> 
+              </Card></div>
             </GridItems>
           ))}
         </Grid>
-      </div>
+     </>
     )
   }
 }

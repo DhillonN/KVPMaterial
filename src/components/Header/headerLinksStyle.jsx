@@ -1,4 +1,4 @@
-import { defaultFont } from "../../assets/jss/material-kit-react.jsx";
+import { defaultFont, karaenaGold } from "../../assets/jss/material-kit-react.jsx";
 
 import tooltip from "../../assets/jss/material-kit-react/tooltipsStyle.jsx";
 
@@ -37,7 +37,7 @@ const headerLinksStyle = theme => ({
     padding: "0 !important"
   },
   navLink: {
-    color: "inherit",
+    color: karaenaGold,
     position: "relative",
     padding: "0.9375rem",
     fontWeight: "400",

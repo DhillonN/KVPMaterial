@@ -10,6 +10,9 @@ import {
       zIndex: "12",
       color: "#FFFFFF",
       ...container,
+      flexDirection:"row",
+      flexWrap:"nowrap",
+      alignItems:"flex-start"
     },
     title:{
       ...title,
@@ -21,7 +24,8 @@ import {
     },
     ...imageStyle,
     imgRaised:{
-height:"100%"
+height:"100%",
+width:"100%"
     },
     subtitle: {
       color:lightKaraenaGold,
@@ -38,11 +42,12 @@ height:"100%"
     itemGrid: {
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth:"100%"
+      maxWidth:"100%",
+      width:"50vw"
     },
     description: {
       color: "#999",
-      textAlign:"center"
+      textAlign:"justify"
     },
     section: {
       padding: "70px 0",

@@ -24,13 +24,15 @@ class projectsSection extends React.Component {
   render() {
     const projectsData = this.props.projectsData
     const { classes } = this.props
-
+    const animations=['zoom-in-right','zoom-in-up','zoom-in-left','flip-right','flip-up','flip-left']
+    var counter=0;
     return (
       <>
         <h2 className={classNames(classes.projectTitle)}>Recent Projects</h2>
-        <Grid>
+        <Grid className={classes.container}>
           {projectsData.edges.map(({ node }, i) => (
-            <Link to={`/${node.title}`} key={i}>
+            <div data-aos={animations[counter++]} key={i}>
+            <Link to={`/${node.title}`}>
               <GridItems
                 xs={12}
                 sm={12}
@@ -39,7 +41,7 @@ class projectsSection extends React.Component {
                 className={classes.itemGrid}
               >
                 <Card
-                  data-aos="zoom-in"
+                  
                   square
                 >
                   <Image
@@ -57,6 +59,7 @@ class projectsSection extends React.Component {
                 </Card>
               </GridItems>
             </Link>
+            </div>
           ))}
         </Grid>
       </>

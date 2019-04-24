@@ -21,6 +21,9 @@ import {
       textDecoration: "none",
     },
     ...imageStyle,
+    imgFit:{
+objectFit:"contain !important"
+    },
     subtitle: {
       fontSize: "1.313rem",
       maxWidth: "500px",
@@ -34,7 +37,9 @@ import {
     itemGrid: {
       marginLeft: "auto",
       marginRight: "auto",
-      height:"100px"
+      height:"100%",
+      width:"100%",
+      maxHeight:"100px"
     },
     mainRaised: {
       margin: "0px 0px 0px",

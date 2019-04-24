@@ -15,6 +15,9 @@ import Drawer from "@material-ui/core/Drawer";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import headerStyle from "./headerStyle.jsx";
+import Logo from '../../assets/images/logotriangle.svg'
+import LogoText from '../../assets/images/logokvp.svg'
+import { primaryColor } from "../../assets/jss/material-kit-react.jsx";
 
 class Header extends React.Component {
   constructor(props) {
@@ -76,6 +79,8 @@ class Header extends React.Component {
     const brandComponent = <Button className={classes.title}>{brand}</Button>;
     return (
       <AppBar className={appBarClasses}>
+     
+      <Logo className={classes.logo} />      
         <Toolbar className={classes.container}>
           {leftLinks !== undefined ? brandComponent : null}
           <div className={classes.flex}>
@@ -92,9 +97,10 @@ class Header extends React.Component {
           </Hidden>
           <Hidden mdUp>
             <IconButton
-              color="inherit"
+              color='primary'
               aria-label="open drawer"
               onClick={this.handleDrawerToggle}
+              className={classes.hamburger}
             >
               <Menu />
             </IconButton>

@@ -1,15 +1,16 @@
 import {
-    container,
+   
     title,
     karaenaGold,
-    lightKaraenaGold
+    lightKaraenaGold,
   } from "../../../../assets/jss/material-kit-react.jsx"
   import imageStyle from "../../../../assets/jss/material-kit-react/imagesStyles"
   const projectStyle = {
     container: {
       zIndex: "12",
       color: "#FFFFFF",
-      ...container,
+      
+      
     },
     projectTitle:{
       ...title,
@@ -43,11 +44,24 @@ height:"100%"
       background: "#FFFFFF",
       position: "relative",
       zIndex: "3",
+     
+    },
+    mainRaised: {
+      margin: "0px 0px 0px",
+      borderRadius: "6px", 
+      boxShadow:
+        "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
     },
     itemGrid: {
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth:"100%"
+      maxWidth:"100%",
+      transition:("all ease-in-out 1.2s"),
+      '&:hover':{
+        transform:"scale(1.1)",
+        transition:("ease-in-out 1.2s")
+        
+      },
     },
     description: {
       color: "#999",

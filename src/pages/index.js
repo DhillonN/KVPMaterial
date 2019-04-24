@@ -76,6 +76,11 @@ export const query = graphql`
             field_image {
               localFile {
                 url
+                childImageSharp{
+                  fluid(maxWidth:250){
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
               }
             }
           }
@@ -93,6 +98,11 @@ export const query = graphql`
         field_about_photo {
           localFile {
             url
+            childImageSharp{
+              fluid(maxWidth:500){
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
           }
         }
       }

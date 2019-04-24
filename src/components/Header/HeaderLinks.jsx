@@ -10,13 +10,11 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
 
 // React icons
 import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 // core components
-import CustomDropdown from "../CustomDropdown/CustomDropdown.jsx";
 import Button from "../CustomButtons/Button";
 
 import headerLinksStyle from "./headerLinksStyle.jsx";
