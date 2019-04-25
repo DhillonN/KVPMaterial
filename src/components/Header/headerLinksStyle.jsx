@@ -1,6 +1,7 @@
-import { defaultFont, karaenaGold } from "../../assets/jss/material-kit-react.jsx";
+import { defaultFont, karaenaGold, underline } from "../../assets/jss/material-kit-react.jsx";
 
 import tooltip from "../../assets/jss/material-kit-react/tooltipsStyle.jsx";
+
 
 const headerLinksStyle = theme => ({
   list: {
@@ -13,6 +14,9 @@ const headerLinksStyle = theme => ({
     paddingBottom: "0",
     color: "inherit"
   },
+  underline:{
+...underline,
+  },
   listItem: {
     float: "left",
     color: "inherit",
@@ -21,6 +25,12 @@ const headerLinksStyle = theme => ({
     width: "auto",
     margin: "0",
     padding: "0",
+    overflow:"hidden",
+    "&:hover":{
+      "& span":{
+      transform: 'translate(0,0)',
+      },
+    },
     [theme.breakpoints.down("sm")]: {
       width: "100%",
       "&:after": {
@@ -48,9 +58,12 @@ const headerLinksStyle = theme => ({
     textDecoration: "none",
     margin: "0px",
     display: "inline-flex",
-    "&:hover,&:focus": {
-      color: "inherit",
-      background: "rgba(200, 200, 200, 0.2)"
+    "&::before,&::after": {
+      boxSizing: "inherit",
+      content: '',
+      position: "absolute",
+      width: "100%",
+      height: "100%",
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
@@ -61,7 +74,7 @@ const headerLinksStyle = theme => ({
       "& > span:first-child": {
         justifyContent: "flex-start"
       }
-    }
+    },
   },
   notificationNavLink: {
     color: "inherit",

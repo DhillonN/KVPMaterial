@@ -180,6 +180,16 @@ const cardSubtitle = {
   marginBottom: "0",
   marginTop: "-.375rem"
 };
+const underline= {
+  border: '2px solid goldenrod',
+  width: '95%',
+  display: 'block',
+  transform:"translate(-100%,0)",
+  position: 'absolute',
+  top: 35,
+  transition: 'transform .15s linear',
+}
+
 
 export {
   //variables
@@ -217,5 +227,6 @@ export {
   cardLink,
   cardSubtitle,
   karaenaGold,
-  lightKaraenaGold
+  lightKaraenaGold,
+  underline,
 };

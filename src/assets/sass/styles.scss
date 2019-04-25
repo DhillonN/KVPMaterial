@@ -1,22 +1,22 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-.landing-section{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    text-align: center;
+.landing-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
 }
-.main-body{
-    height: 100vh;
+.main-body {
+  height: 100vh;
 }
 
-.testimonials-image{
-    width:100%;
+.testimonials-image {
+  width: 100%;
 }
-.project-description{
- /*   height: 5vw;
+.project-description {
+  /*   height: 5vw;
     margin-top:-10px;
     h3,h5{
         line-height: 1rem;
@@ -25,7 +25,8 @@
     }*/
 }
 
-.ReactModalPortal{
-    position: absolute;
-    z-index: 9999;
-  }
+.ReactModalPortal {
+  position: absolute;
+  z-index: 9999;
+}
+
