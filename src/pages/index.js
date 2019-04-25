@@ -36,6 +36,11 @@ export const query = graphql`
         field_front_photo {
           localFile {
             url
+            childImageSharp{
+              fluid{
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
           }
         }
       }

@@ -5,9 +5,12 @@ import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
 import GalleryStyles from "./GalleryStyles"
 import Masonry from "react-masonry-component"
-import ReactModal from "react-modal"
-import "react-image-lightbox/style.css"
+import LightBox from "@material-ui/core/Dialog"
 import Button from "../CustomButtons/Button"
+import DialogContent from "@material-ui/core/DialogContent"
+import withMobileDialog from "@material-ui/core/withMobileDialog"
+import ActionButtons from "@material-ui/core/DialogActions"
+import NonStretchedImage from '../Image/Image'
 const customStyles = {
   content: {
     top: "50%",
@@ -16,12 +19,13 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    zIndex:"9999",
+    zIndex: "9999",
     width: "100%",
-    maxWidth:"80vw",
-    maxHeight:"80vh"
+    maxWidth: "80vw",
+    maxHeight: "80vh",
   },
 }
+
 
 class Gallery extends React.Component {
   handleModalOpen = event => {
@@ -50,15 +54,15 @@ class Gallery extends React.Component {
   handleClick = (e, index) => {
     e.preventDefault()
     this.setState({ isModalOpen: true })
-    console.log(e)
     this.setState({
-      showLightbox: !this.state.showLightbox,
       selectedImage: index,
     })
   }
 
   closeModal = () => {
-    this.setState({ showLightbox: false })
+    this.setState({
+      isModalOpen: false,
+    })
   }
 
   goBack = () => {
@@ -72,7 +76,7 @@ class Gallery extends React.Component {
   handleKeyUp = e => {
     e.preventDefault()
     const { keyCode } = e
-    if (this.state.showLightbox) {
+    if (this.state.isModalOpen) {
       if (keyCode === 37) {
         // Left Arrow Key
         if (this.state.selectedImage > 0) {
@@ -81,22 +85,25 @@ class Gallery extends React.Component {
       }
       if (keyCode === 39) {
         // Right Arrow Key
-        if (this.state.selectedImage < this.props.images.length - 1) {
+
+        console.log(this.props)
+        if (
+          this.state.selectedImage <
+          this.props.galleryData.relationships.field_gallery.length - 1
+        ) {
           this.setState({ selectedImage: this.state.selectedImage + 1 })
         }
       }
       if (keyCode === 27) {
         // Escape key
-        this.setState({ showLightbox: false })
+        this.setState({ isModalOpen: false })
       }
     }
   }
   render() {
-    const { showLightbox, selectedImage } = this.state
+    const { selectedImage } = this.state
     const projectData = this.props.galleryData
     const { classes } = this.props
-    const images = projectData.relationships.field_gallery
-    console.log(images)
     return (
       <Layout>
         <div className={classNames(classes.main, classes.mainRaised)}>
@@ -104,6 +111,7 @@ class Gallery extends React.Component {
           <Masonry className={classes.galleryGrid}>
             {projectData.relationships.field_gallery.map(({ localFile }, i) => (
               <a
+                key={i}
                 href={localFile.childImageSharp.fluid.src}
                 onClick={e => this.handleClick(e, i)}
                 className={classes.galleryGrid__item}
@@ -118,35 +126,39 @@ class Gallery extends React.Component {
               </a>
             ))}
           </Masonry>
-          <ReactModal
-            style={customStyles}
-            isOpen={this.state.isModalOpen}
-            onRequestClose={this.handleModalClose}
-            visible={showLightbox}
-            onKeyUp={e => this.handleKeyDown(e)}
+          <LightBox
+            fullWidth={true}
+            maxWidth="lg"
+            open={this.state.isModalOpen}
+            onClose={this.handleModalClose}
+            onKeyUp={e => this.handleKeyUp(e)}
           >
-            <Image
-              fluid={
-                projectData.relationships.field_gallery[selectedImage].localFile
-                  .childImageSharp.fluid
-              }
-            />
+            <DialogContent>
+            
+            <NonStretchedImage
+                fluid={
+                  projectData.relationships.field_gallery[selectedImage]
+                    .localFile.childImageSharp.fluid
+                }
+              />
+              <ActionButtons>
+                <Button color="primary" onClick={this.closeModal}>Close</Button>
 
-            <Button onClick={this.closeModal}>Close</Button>
-
-            <Button onClick={this.goBack} disabled={selectedImage === 0}>
-              Previous
-            </Button>
-            <Button
-              onClick={this.goForward}
-              disabled={
-                selectedImage ===
-                projectData.relationships.field_gallery.length - 1
-              }
-            >
-              Next
-            </Button>
-          </ReactModal>
+                <Button color="primary" onClick={this.goBack} disabled={selectedImage === 0}>
+                  Previous
+                </Button>
+                <Button color="primary"
+                  onClick={this.goForward}
+                  disabled={
+                    selectedImage ===
+                    projectData.relationships.field_gallery.length - 1
+                  }
+                >
+                  Next
+                </Button>
+              </ActionButtons>
+            </DialogContent>
+          </LightBox>
         </div>
       </Layout>
     )

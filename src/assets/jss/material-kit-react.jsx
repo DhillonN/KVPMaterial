@@ -181,7 +181,8 @@ const cardSubtitle = {
   marginTop: "-.375rem"
 };
 const underline= {
-  border: '2px solid goldenrod',
+  border: '2px solid',
+  borderColor:karaenaGold,
   width: '95%',
   display: 'block',
   transform:"translate(-100%,0)",

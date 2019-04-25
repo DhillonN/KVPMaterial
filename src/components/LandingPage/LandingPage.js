@@ -8,7 +8,6 @@ import Projects from "../LandingPage/sections/projects/projects"
 import Testimonials from "./sections/Testimonials/Testimonials"
 import AboutPage from "./sections/About/About"
 
-
 class LandingPage extends React.Component {
   render() {
     const fields = this.props.pagedata
@@ -20,14 +19,13 @@ class LandingPage extends React.Component {
     return (
       <div>
        
-        <Parallax image={fields.relationships.field_front_photo.localFile.url}>
+        <Parallax image={fields.relationships.field_front_photo.localFile.childImageSharp.fluid.srcWebp}>
           <div className={"landing-section"}>
             <h1>{fields.title}</h1>
             <span dangerouslySetInnerHTML={{ __html: fields.body.processed }} />
             <Button color="primary">Let's Start</Button>
           </div>
         </Parallax>
-
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.section}>
             <Projects projectsData={cardFields} />

@@ -21,6 +21,7 @@ nodeProjects (id: {eq: $id}) {
           childImageSharp{
             fluid{
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              presentationWidth
             }
           }
         }
